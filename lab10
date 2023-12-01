@@ -1,0 +1,73 @@
+using System.ComponentModel.Design;
+
+Student Iluha = new Student("Неронов И.С.", 2022, "ул Фабричная 10", +79374381633, 1, "Операционные системы и программирование");
+Student AslanDon = new Student("Сафаров А.А.", 2020, "ул Фабричная 10", +79653293562, 3, "Фальшивомонетчик");
+Student Nikitosss = new Student("Агеев Н.С.", 2021, "ул Пушкина дом колотушкина", +79512361236, 2, "Киберпреступник");
+Student[] mass = new Student[3] { Iluha, AslanDon, Nikitosss };
+for (int i = 0; i < 3; i++)
+{
+    Console.WriteLine($"ФИО студентa: {mass[i].fio}");
+}
+Console.WriteLine("Введите факультет: Операционные системы и программирование, Фальшивомонетчик или Киберпреступник");
+string? facul = Console.ReadLine();
+for (int i = 0; i < 3; i++)
+{
+    if (mass[i].faculty == facul)
+    {
+        Console.WriteLine($"Студент заданного факультета: {mass[i].fio}");
+    }
+}
+Console.WriteLine("Введите год");
+int date = Convert.ToInt32(Console.ReadLine());
+for (int i = 0; i < 3; i++)
+{
+    if (mass[i].data > 2019)
+    {
+        Console.WriteLine($"Студент,который поступил после указанного года:{mass[i].fio}");        
+    }
+}
+class Student
+{
+    private string FIO;
+    private int Data;
+    private string Address;
+    private long PhoneNumber;
+    private int Course;
+    private string Faculty;
+    public Student(string FIO, int Data, string Address, long PhoneNumber, int Course, string Faculty)
+    {
+        this.FIO = FIO;
+        this.Data = Data;
+        this.Address = Address;
+        this.PhoneNumber = PhoneNumber;
+        this.Course = Course;
+        this.Faculty = Faculty;
+    }
+    public string fio
+    {
+        get { return FIO; }
+        set { FIO = value; }
+    }
+    public int data
+    {
+        get { return Data; }
+        set { Data = value; }
+    }
+    public string address
+    {
+        get { return Address; }
+    }
+    public long phonenumber
+    {
+        get { return PhoneNumber; }
+        set { PhoneNumber = value; }
+    }
+    public int course
+    {
+        set { Course = value; }
+    }
+    public string faculty
+    {
+        get { return Faculty; }
+    }
+}
