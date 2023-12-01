@@ -21,9 +21,9 @@ Console.WriteLine("Введите год");
 int date = Convert.ToInt32(Console.ReadLine());
 for (int i = 0; i < 3; i++)
 {
-    if (mass[i].data > 2019)
+    if (mass[i].data > date)
     {
-        Console.WriteLine($"Студент,который поступил после указанного года:{mass[i].fio}");        
+        Console.WriteLine($"Студент,который поступил после указанного года:{mass[i].fio}");
     }
 }
 class Student
