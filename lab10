@@ -9,7 +9,7 @@ for (int i = 0; i < 3; i++)
     Console.WriteLine($"ФИО студентa: {mass[i].fio}");
 }
 Console.WriteLine("Введите факультет: Операционные системы и программирование, Фальшивомонетчик или Киберпреступник");
-string? facul = Console.ReadLine();
+string facul = Console.ReadLine();
 for (int i = 0; i < 3; i++)
 {
     if (mass[i].faculty == facul)
